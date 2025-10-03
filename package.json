@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "npm run lint src --fix",
+    "prettier:fix": "npx prettier --write src",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\""
   },
   "keywords": [],
   "author": "",
@@ -19,9 +23,17 @@
     "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/morgan": "^1.9.10",
-    "typescript": "^5.9.3"
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
+    "jiti": "^2.6.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
   }
 }
